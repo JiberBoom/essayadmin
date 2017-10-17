@@ -79,29 +79,30 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="javascript:;">用户管理</a>
-                    <dl class="layui-nav-child">
-                        <dd><a href="{{route('users.index')}}">用户列表</a></dd>
-                    </dl>
-                </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">笔记管理</a>
+                    <a class="layui-bg-green" href="javascript:;">笔记管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;">笔记列表</a></dd>
                         <dd><a href="javascript:;">新增笔记</a></dd>
 
                     </dl>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">笔记分类管理</a>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="layui-bg-green" href="javascript:;">笔记分类管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;">分类列表</a></dd>
                         <dd><a href="javascript:;">新增分类</a></dd>
 
                     </dl>
                 </li>
-                <li class="layui-nav-item">
-                    <a href="javascript:;">轮播管理</a>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="layui-bg-green" href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="{{route('users.index')}}">用户列表</a></dd>
+                    </dl>
+                </li>
+
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a class="layui-bg-green" href="javascript:;">轮播管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;">轮播图片</a></dd>
                     </dl>
