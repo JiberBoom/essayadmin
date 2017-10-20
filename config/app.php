@@ -65,7 +65,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'PRC',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +169,9 @@ return [
          */
 
         Spatie\PaginateRoute\PaginateRouteServiceProvider::class,//seo友好分页
+        Overtrue\LaravelUEditor\UEditorServiceProvider::class,//安正超的文本编辑器
+        MercurySeries\Flashy\FlashyServiceProvider::class,//错误提示
+        YuanChao\Editor\EndaEditorServiceProvider::class,//markdown编辑器
         /*
          * Application Service Providers...
          */
@@ -227,6 +230,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PaginateRoute' => Spatie\PaginateRoute\PaginateRouteFacade::class,//seo友好分页
+        'Flashy' => MercurySeries\Flashy\Flashy::class,//错误提示
+        'EndaEditor' => YuanChao\Editor\Facade\EndaEditorFacade::class,//markdown编辑器
 
     ],
 

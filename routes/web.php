@@ -30,3 +30,12 @@ Route::paginate('users', 'UsersController@index');//这个路由一定要写，�
 Route::resource('/users','UsersController');
 
 Route::get('/users/{id}/changeStatus/{status}','UsersController@changeStatus');//更改用户状态
+
+Route::resource('notecates','NoteCatesController');
+
+Route::resource('notes','NotesController');
+
+Route::get('/notes/{id}/review/{review}','NotesController@review');//审核笔记
+
+Route::post('upeditor','UploadController@uploadeditor');
+

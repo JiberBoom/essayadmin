@@ -12,8 +12,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="/layui/css/layui.css">
-    <script src="/layui/layui.js"></script>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet'>
+    <link rel="stylesheet" href="/storage/layui/css/layui.css">
+    <script src="/storage/layui/layui.js"></script>
+
 </head>
 <body class="layui-layout-body">
 @guest
@@ -32,7 +35,7 @@
         <!-- 头部区域（可配合layui已有的水平导航） -->
         <ul class="layui-nav layui-layout-left">
             <li class="layui-nav-item"><a href="">控制台</a></li>
-            <li class="layui-nav-item"><a href="">笔记管理</a></li>
+            <li class="layui-nav-item"><a href="">记笔记</a></li>
             <li class="layui-nav-item">
                 <a href="javascript:;">其它</a>
                 <dl class="layui-nav-child">
@@ -79,30 +82,30 @@
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
             <ul class="layui-nav layui-nav-tree"  lay-filter="test">
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="layui-bg-green" href="javascript:;">笔记管理</a>
+                    <a class="" href="javascript:;">笔记管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">笔记列表</a></dd>
-                        <dd><a href="javascript:;">新增笔记</a></dd>
+                        <dd><a href="{{route('notes.index')}}">笔记列表</a></dd>
+                        <dd><a href="{{route('notes.create')}}">新增笔记</a></dd>
 
                     </dl>
                 </li>
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a class="layui-bg-green" href="javascript:;">笔记分类管理</a>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;">笔记分类管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">分类列表</a></dd>
-                        <dd><a href="javascript:;">新增分类</a></dd>
+                        <dd><a href="{{route('notecates.index')}}">分类列表</a></dd>
+                        <dd><a href="{{route('notecates.create')}}">新增分类</a></dd>
 
                     </dl>
                 </li>
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a class="layui-bg-green" href="javascript:;">用户管理</a>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;">用户管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="{{route('users.index')}}">用户列表</a></dd>
                     </dl>
                 </li>
 
-                <li class="layui-nav-item layui-nav-itemed">
-                    <a class="layui-bg-green" href="javascript:;">轮播管理</a>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;">轮播管理</a>
                     <dl class="layui-nav-child">
                         <dd><a href="javascript:;">轮播图片</a></dd>
                     </dl>
@@ -116,22 +119,24 @@
         @yield('content')
     </div>
 
-    <div class="layui-footer">
+    <div class="layui-footer" style="text-align: center">
         <!-- 底部固定区域 -->
         © copyright2017 - JiberBoom
     </div>
 </div>
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
+
+@yield('js')
+<script>
+    layui.use(['element'],function () {
+        
+    });
+</script>
+
+@include('flashy::message')
+@include('editor::head')
 @endguest
-    <script>
-        //JavaScript代码区域
-        layui.use('element', function(){
-            var element = layui.element;
 
-        });
-    </script>
-    @yield('js')
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
